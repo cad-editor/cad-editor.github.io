@@ -717,49 +717,40 @@ a#clustrmaps-widget-v2 {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
-
 .floating-menu {
   position: fixed;
   top: 50px;
   left: 20px;
-  width: 210px; 
-  background-color: #f8f9fa; 
-  border: 1px solid #ddd; 
-  border-radius: 8px; 
-  padding: 12px; 
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+  width: 210px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-.floating-menu h3 {
-  font-size: 16px; 
-  color: #333;
-  margin-bottom: 8px;
-}
+@media (max-width: 1024px) {
+  .floating-menu {
+    top: 10px;
+    left: 10px;
+    width: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-.floating-menu ul {
-  list-style: none;
-  padding: 0;
-}
+  .floating-menu ul {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-.floating-menu li {
-  margin: 6px 0; 
-}
-
-.floating-menu a {
-  text-decoration: none;
-  color: #555;
-  font-size: 15px;
-  display: block;
-  padding: 4px 8px; 
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.floating-menu a:hover {
-  background-color: #e9ecef; /*悬停效果*/
-}
-
-.floating-menu a:hover,
-.floating-menu a.active {
-    background-color: #e9ecef; 
+  .floating-menu:hover ul {
+    display: block;
+  }
 }
