@@ -1,1 +1,603 @@
-<h1> Hello World!</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9N9911MNC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-B9N9911MNC');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Text-to-CAD Generation Through Infusing Visual Feedback in Large Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADFusion</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-tooltip.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/gallery.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/gallery.js"></script>
+</head>
+
+<body>
+
+  <div class="floating-menu">
+    <ul>
+      <li><a href="#top">🔝 Top</a></li>
+      <!-- <li><a href="#top">⬆️ Top</a></li> -->
+      <li><a href="#task">📝 Task Formulation</a></li>
+      <li><a href="#data">📂 Data Synthesis</a></li>
+      <li><a href="#framework">🤖 Framework</a></li>
+      <li><a href="#qualitative">🖼️ Qualitative Results</a></li>
+      <li><a href="#quantitative">📊 Quantitative Results</a></li>
+    </ul>
+  </div>
+
+
+  <!--Title block-->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop" id="top">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <span class="highlight rainbow-text">CAD-Editor</span>: A Locate-then-Infill Framework with Automated
+              Training Data Synthesis for <br>
+              Text-Based CAD Editing
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=A6v9CeEAAAAJ"
+                  target="_blank"> Yu Yuan</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://www.microsoft.com/en-us/research/people/shizsu/"
+                  target="_blank">Shizhao Sun</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="http://staff.ustc.edu.cn/~qiliuql/" target="_blank">Qi
+                  Liu</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://www.microsoft.com/en-us/research/people/jiabia/"
+                  target="_blank">Jiang Bian</a><sup>2</sup></span>
+            </div>
+            <br>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Science and Technology of China,
+                <sup>2</sup>Microsoft Research</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="http://arxiv.org/abs/2502.03997" target="_blank"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://cad-editor.github.io/" target="_blank"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://cad-editor.github.io/" target="_blank"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      🤗
+                    </span>
+                    <span>Dataset (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+
+            <div class="columns is-centered has-text-centered is-variable is-8">
+              <div class="column is-max-desktop is-centered has-text-centered">
+                <div class="publication-links ">
+
+                  <!-- <span class="link-block">
+                    <a href="#contribution" class="nav-link button-55 is-normal">
+                      <span>Contribution</span>
+                    </a>
+                  </span> -->
+
+                  <span class="link-block">
+                    <a href="#task" class="nav-link button-55 is-normal">
+                      <span>Task Formulation</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#data" class="nav-link button-55 is-normal">
+                      <span>Data Synthesis</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#framework" class="nav-link button-55 is-normal">
+                      <span>Framework</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#qualitative" class="nav-link button-55 is-normal">
+                      <span>Qualitative Results</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="#quantitative" class="nav-link button-55 is-normal">
+                      <span>Quantitative Results</span>
+                    </a>
+                  </span>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Video-->
+  <!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    
+        <div class="item">
+          <p style="margin-bottom: 30px">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/videos/main_video/video_sketch_new.mp4"
+          type="video/mp4">
+
+        </video>
+        <h6 class="caption">We recommend watching the video with sound on</h6>
+        </p>
+      </div>
+  </div>
+</section> -->
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <iframe allowFullScreen title="video" width="960" height="480"
+        src="https://www.youtube.com/embed/LK8LAzR0v5M?si=FD1Vg9wjkROTKjDV"></iframe>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-five-sixths">
+          <h2 class="title is-3 gradient-blue-green">Abstract</h2>
+          <div class="abstract-box">
+            <div class="content has-text-justified">
+              <p>
+                Computer-Aided Design (CAD) is indispensable across various industries.
+                <strong>Text-based CAD editing</strong>, which automates the modification of CAD models based on textual
+                instructions, holds great potential but remains underexplored.
+                Existing methods primarily focus on design variation generation or text-based CAD generation, either
+                lacking support for text-based control or neglecting existing CAD models as constraints.
+                We introduce <strong>CAD-Editor</strong>, the first framework for text-based CAD editing.
+                To address the challenge of demanding triplet data with accurate correspondence for training, we propose
+                an <strong>automated data synthesis pipeline</strong>.
+                This pipeline utilizes design variation models to generate pairs of original and edited CAD models and
+                employs Large Vision-Language Models (LVLMs) to summarize their differences into editing instructions.
+                To tackle the composite nature of text-based CAD editing, we propose a
+                <strong>locate-then-infill</strong> framework that decomposes the task into two focused sub-tasks:
+                locating regions requiring modification and infilling these regions with appropriate edits.
+                Large Language Models (LLMs) serve as the backbone for both sub-tasks, leveraging their capabilities in
+                natural language understanding and CAD knowledge.
+                Experiments show that CAD-Editor achieves superior performance both quantitatively and qualitatively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop" id="contribution">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 gradient-blue-green">Contribution</h2>
+          <div class="content has-text-justified">
+            <p>
+              <ul>
+                <li> We introduce a new task, text-based CAD editing, enabling precise edits through textual instructions to better align with real-world user needs.</li>
+                <li> We propose an automated data synthesis pipeline that combines design variation models and LVLMs 
+                  to generate triplet data with accurate correspondence, addressing a critical challenge in training. </li>
+                <li> We develop a locate-then-infill framework that decomposes the task into focused sub-tasks, effectively handling the composite nature of text-based CAD editing.   </li>                 </li>
+                <li> We conduct extensive experiments, demonstrating that our approach outperforms baselines in generation validity, text-CAD alignment, and overall quality. </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop" id="task">
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3 gradient-blue-green">Task Formulation</h2><br>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/task_formulation.png" />
+          <div class="content has-text-justified">
+            <br>
+            We formulate text-based CAD editing as a seq2seq generation problem.
+            To achieve this, both the editing instruction and the CAD models are represented as sequences of textual
+            tokens.
+            The editing instruction naturally consists of textual tokens.
+            For both the original and edited CAD models, we adopt the sequence format introduced by FlexCAD.
+          </div>
+          <img src="static/images/examples.png" />
+          <div class="content has-text-justified">
+            <br>
+            Here are some text-based CAD editing examples achieved by CAD-Editor.
+            Each sub-figure shows the editing instruction at the top, the original CAD model on the left, and the edited
+            CAD model on the right.
+            The rendered image is shown for better comprehension.
+            The actual editing occurs on SE operations of a CAD model to provide editability and reusability.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop" id="data">
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3 gradient-blue-green">Automated Data Synthesis Pipeline</h2><br>
+      </div>
+      <div class="is-max-desktop columns is-centered has-text-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/data_generation.png" />
+          <div class="content has-text-justified">
+            <br>
+            Our data synthesis pipeline comprises three key steps:
+            <ol>
+              <li><strong>Paired CAD Models Generation:</strong> We create paired CAD models by starting with an
+                existing CAD model and applying design variation models to create its variations.
+              </li>
+              <li><strong>Editing Instruction Generation:</strong> We generate editing instructions by summarizing
+                the difference between the original CAD models and edited CAD models using LVLMs.
+              </li>
+              <li><strong>Assembling:</strong> Finally, we assemble CAD pairs from the first step and
+                editing instruction from the second step into triplets.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop" id="framework">
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3 gradient-blue-green">Locate-then-Infill Framework</h2><br>
+      </div>
+      <div class="is-max-desktop columns is-centered has-text-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/framework.png" />
+          <div class="content has-text-justified">
+            <br>
+            We decompose text-based CAD editing by explicitly introducing a masked CAD sequence to indicate potential
+            modification regions.
+            <ul>
+              <li><strong>Locating Stage:</strong> This stage aims to generate a masked CAD sequence, where regions
+                requiring modification are marked by special tokens
+                <code>&lt;mask&gt;</code> while unchanged parts are copied from the original CAD sequence.
+              </li>
+              <li><strong>Infilling Stage:</strong> This stage focuses on generating the final edited sequence
+                by precisely filling in the masked regions while preserving the unmodified parts. </li>
+              <ul>
+                <li><strong>Improving Performance with Selective Data:</strong> To further improve performance, we
+                  introduce a selective dataset curated with human annotations.
+              </ul>
+              <li><strong>Training and Inference:</strong>
+                <ul>
+                  <li><strong>Training:</strong> In the locating stage, we fine-tune LLMs using Low-Rank Adapters (LoRA)
+                    with the ground-truth masked CAD sequence constructed via LCS.
+                    For the infilling stage, we first fine-tune LLMs using LoRA with the synthetic dataset, then further
+                    refine the model by fine-tuning it with LoRA on the selective dataset.
+                  </li>
+                  <li><strong>Inference:</strong> The locating and the infilling stage operates sequentially.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop" id="qualitative">
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3 gradient-blue-green">Qualitative Results</h2><br>
+      </div>
+
+      <div class="comparison" style="margin-bottom: 30px;">
+        <h4 class="title is-4">Comparison with Baselines</h4>
+        <div class="has-text-centered">
+          <img src="static/images/comparison.png" />
+          <div class="content is-centered has-text-justified">
+            <br>
+            Qualitative results from CAD-Editor, GPT-4o-Basic (providing only an explanation of CAD operation sequences
+            to GPT-4o as prompt) and
+            GPT-4o-IC (providing three in-context examples retrieved based on cosine similarity between editing
+            instructions, in addition to the basic explanation) .
+            The text below shows the editing instruction.
+          </div>
+        </div>
+      </div>
+
+      <div class="cad-example" style="margin-bottom: 30px;">
+        <h4 class="title is-4">Various Examples</h4>
+        <figure class="image">
+          <img src="static/images/diverse_instructions.png" alt="Diverse Instructions">
+        </figure>
+        <div class="content text-justify">
+          <br>
+          Additional results from CAD-Editor with various editing instructions.
+          In each sub-figure, the left image shows the original CAD model, the right image displays the edited CAD
+          model, and the text below provides the editing instruction.
+        </div>
+      </div>
+
+      <div class="cad-example" style="margin-bottom: 30px;">
+        <h4 class="title is-4">One Model, Multiple Instructions</h4>
+        <figure class="image">
+          <img src="static/images/multiple_instructions.png" alt="Multiple Instructions">
+        </figure>
+        <div class="content text-justify">
+          <br>
+          Given one CAD model and various instructions, CAD-Editor produces different outcomes.
+        </div>
+      </div>
+
+      <div class="cad-example" style="margin-bottom: 30px;">
+        <h4 class="title is-4">Same Input, Diverse Outcomes</h4>
+        <figure class="image">
+          <img src="static/images/onetomore.png" alt="One to More">
+        </figure>
+        <div class="content text-justify">
+          <br>
+          Given the same CAD model and instruction, CAD-Editor produces diverse outcomes.
+        </div>
+      </div>
+
+      <div class="cad-example">
+        <h4 class="title is-4">Iterative Editing Process</h4>
+        <figure class="image">
+          <img src="static/images/continuous.png" alt="Continuous Editing">
+        </figure>
+        <div class="content text-justify">
+          <br>
+          Apply CAD-Editor iteratively to edit a CAD model until it meets user requirements.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop" id="quantitative">
+      <div class="section-title has-text-centered is-centered">
+        <h2 class="title is-3 gradient-blue-green">Quantitative Results</h2><br>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-three-quarters has-text-centered">
+          <style>
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              text-align: center;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+            }
+
+            th,
+            td {
+              padding: 10px;
+              font-size: 16px;
+            }
+
+            th {
+              font-weight: bold;
+              font-size: 18px;
+            }
+
+            .thick-line-top {
+              border-top: 3px solid black;
+            }
+
+            .thick-line-bottom {
+              border-bottom: 3px solid black;
+            }
+
+            .thin-line {
+              border-bottom: 1px solid black;
+            }
+          </style>
+
+          <table>
+            <tr class="thick-line-top">
+              <th>Method</th>
+              <th>JSD &darr;</th>
+              <th>D-CLIP &uarr;</th>
+              <th>VR &uarr;</th>
+              <th>H-Eval &uarr;</th>
+            </tr>
+            <tr class="thick-line-top">
+              <td><strong>SkexGen</strong></td>
+              <td> 1.94 </td>
+              <td> - </td>
+              <td> 74.3 </td>
+              <td> - </td>
+            </tr>
+            <tr>
+              <td><strong>Hnc-CAD</strong></td>
+              <td> 1.77 </td>
+              <td> - </td>
+              <td> 77.4 </td>
+              <td> - </td>
+            </tr>
+            <tr>
+              <td><strong>FlexCAD</strong></td>
+              <td> 1.72 </td>
+              <td> - </td>
+              <td> 82.1 </td>
+              <td> - </td>
+            </tr>
+            <tr>
+              <td><strong>Text2CAD</strong></td>
+              <td> 2.39 </td>
+              <td> - </td>
+              <td> 84.8 </td>
+              <td> - </td>
+            </tr>
+            <tr class="thick-line-top">
+              <td><strong>GPT-4o-Basic</strong></td>
+              <td> 1.10 </td>
+              <td> -1.08 </td>
+              <td> 63.2 </td>
+              <td> 7.22 </td>
+            </tr>
+            <tr>
+              <td><strong>GPT-4o-IC</strong></td>
+              <td> 0.70 </td>
+              <td> -0.11 </td>
+              <td> 84.5 </td>
+              <td> 15.6 </td>
+            </tr>
+            <tr class="thick-line-bottom">
+              <td><strong>CAD-Editor</strong></td>
+              <td><strong> 0.65 </strong></td>
+              <td><strong> 0.27 </strong></td>
+              <td><strong> 95.6 </strong></td>
+              <td><strong> 43.2 </strong></td>
+            </tr>
+            <!-- <tr class="thick-line-bottom">
+                    <td colspan="10"></td>
+                </tr> -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website content is licensed under a <a rel="license"
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+                Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Website source code based on the <a href="https://livesketch.github.io/">LiveSketch</a> project page. If
+              you want to reuse their <a href="https://github.com/LiveSketch/livesketch.github.io">source code</a>,
+              please credit them appropriately.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer>
+    <div class="ms_footer">
+      <p>
+        <a target="_blank" aria-label="Privacy & Cookies" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy
+          &amp; Cookies</a>
+        <span class="line">|</span>
+        <a target="_blank" aria-label="Consumer Health Privacy"
+          href="https://go.microsoft.com/fwlink/?linkid=2259814">Consumer Health Privacy</a>
+        <span class="line">|</span>
+        <a target="_blank" aria-label="Trademarks" href="https://www.microsoft.com/trademarks">Trademarks</a>
+        <span class="line">|</span>
+        <a target="_blank" aria-label="Terms of Use" href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms
+          of Use</a>
+        <span style="margin-left:1em;">© Microsoft 2024</span>
+      </p>
+      <p>
+        <span> <a target="_blank" href="https://www.microsoft.com/" style="color: #000;">1</a></span>
+      </p>
+    </div>
+  </footer>
+
+
+  <script type="text/javascript" id="clustrmaps"
+    src="//clustrmaps.com/map_v2.js?d=F9CTOhHWj4WXspVMC12A98Pm-af1gZUJ1KCKnzAAyrc&cl=ffffff&w=a"></script>
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll(".section[id]");
+      const menuLinks = document.querySelectorAll(".floating-menu a");
+
+      function onScroll() {
+        let scrollPosition = window.scrollY + 100;
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            let activeLink = document.querySelector(`.floating-menu a[href="#${sectionId}"]`);
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      }
+
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    });
+
+  </script>
+
+</body>
+
+</html>
